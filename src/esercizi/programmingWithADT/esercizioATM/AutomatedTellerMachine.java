@@ -36,38 +36,56 @@ public class AutomatedTellerMachine {
         this.account = account;
     }
 
-    public void startATM() {
-        this.machineState = MachineState.Waiting;
+    public void startATM() throws InvalidStateException {
+        String msg = "Lo stato è invalido";
+        if (this.machineState == MachineState.Off) {
+            this.machineState = MachineState.Waiting;
+        } else {
+            throw new InvalidStateException(msg);
+        }
     }
 
     public void stopATM() throws InvalidStateException {
+        String msg = "Lo stato è invalido";
         if (machineState == MachineState.Waiting) {
             this.machineState = MachineState.Off;
         } else {
-            throw new InvalidStateException();
+            throw new InvalidStateException(msg);
         }
     }
 
-    public void authenticateUser(BankAccount account, String userPin) {
-        int failAttemptsPin = 3;
-        this.machineState = MachineState.Authenticated;
-        this.account = account;
-        account.createToken(account);
-        for (int i = failAttemptsPin; i > 0; i--) {
-            if (userPin.length() != this.pinDigits && !userPin.equals(account.getPin())) {
-                failAttemptsPin = failAttemptsPin - 1;
-            } else {
-                this.userPin = userPin;
-                return ;
+    public void authenticateUser(BankAccount account, String userPin) throws InvalidStateException {
+        String msg = "Lo stato è invalido";
+        if (this.machineState == MachineState.Waiting) {
+            this.machineState = MachineState.Authenticated;
+            this.account = account;
+            int counter = account.getFails();
+            account.createToken(account);
+            for (int i = 0; i < account.getFails(); i++) {
+                if (userPin.length() != this.pinDigits && !userPin.equals(account.getPin())) {
+                    counter = counter - 1;
+                } else {
+                    this.userPin = userPin;
+                    return;
+                }
             }
-        }
-        if (failAttemptsPin == 0) {
-            blockAccount();
+            if (counter == 0) {
+                blockAccount();
+            } else {
+                logout();
+            }
+        } else {
+            throw new InvalidStateException(msg);
         }
     }
 
-    public void logout() {
-        this.machineState = MachineState.Waiting;
+    public void logout() throws InvalidStateException {
+        String msg = "Lo stato è invalido";
+        if (this.machineState == MachineState.Authenticated) {
+            this.machineState = MachineState.Waiting;
+        } else {
+            throw new InvalidStateException(msg);
+        }
     }
 
     public int withdraw(int amount) throws NotEnoughMoneyException, TooMuchMoneyException {
@@ -106,7 +124,7 @@ public class AutomatedTellerMachine {
         this.moneyInsideATM = amount;
     }
 
-    public void blockAccount() {
+    public void blockAccount() throws InvalidStateException {
         this.ActiveAccount = false;
         logout();
     }

@@ -7,6 +7,7 @@ public class BankAccount {
     private String accountNumber;
     private int balance;
     private String userPin;
+    private int failAttemptsPin;
     private int token;
     private Vector<Transactions> transactions;
 
@@ -17,6 +18,7 @@ public class BankAccount {
         this.userPin = null;
         this.token = 0;
         this.transactions = null;
+        this.failAttemptsPin = 0;
     }
 
     public BankAccount(String name, String iban, int balance, String pin) {
@@ -25,6 +27,7 @@ public class BankAccount {
         this.balance = balance;
         this.userPin = pin;
         this.token = 0;
+        this.failAttemptsPin = 3;
     }
 
     public void withdraw(int amount) {
@@ -45,6 +48,10 @@ public class BankAccount {
 
     public void createToken(BankAccount account) {
         account.token = this.token + 1;
+    }
+
+    public int getFails() {
+        return this.failAttemptsPin;
     }
 
     public String getTransactions() {

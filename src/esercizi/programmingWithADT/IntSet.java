@@ -153,6 +153,7 @@ public class IntSet {
          * not yet returned. current==elements.size if we explored all of them.
          */
         private int current;
+        private Integer elem;
         final private Vector<Integer> elements;
 
         /**
