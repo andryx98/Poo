@@ -17,9 +17,9 @@ public class AutomatedTellerMachine {
         Authenticated, Waiting, Off
     }
 
-    public AutomatedTellerMachine() {
+    private AutomatedTellerMachine() {
         this.moneyInsideATM = 0;
-        this.listOfAccounts = new Vector<BankAccount>();
+        this.listOfAccounts = new Vector<>();
         this.machineState = null;
         this.pinDigits = 0;
         this.ActiveAccount = false;
@@ -79,7 +79,7 @@ public class AutomatedTellerMachine {
         }
     }
 
-    public void logout() throws InvalidStateException {
+    private void logout() throws InvalidStateException {
         String msg = "Lo stato è invalido";
         if (this.machineState == MachineState.Authenticated) {
             this.machineState = MachineState.Waiting;
@@ -107,7 +107,7 @@ public class AutomatedTellerMachine {
         this.account.deposit(amount);
     }
 
-    public int checkBalance(BankAccount account) {
+    private int checkBalance(BankAccount account) {
         return account.getBalance();
     }
 
@@ -120,11 +120,11 @@ public class AutomatedTellerMachine {
         return "";
     }
 
-    public void insertMoney(int amount) {
+    private void insertMoney(int amount) {
         this.moneyInsideATM = amount;
     }
 
-    public void blockAccount() throws InvalidStateException {
+    private void blockAccount() throws InvalidStateException {
         this.ActiveAccount = false;
         logout();
     }
