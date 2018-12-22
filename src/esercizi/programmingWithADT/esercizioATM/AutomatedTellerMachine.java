@@ -1,6 +1,6 @@
 package esercizi.programmingWithADT.esercizioATM;
 
-import esercizi.programmingWithADT.esercizioATM.Exceptions.*;
+import esercizi.programmingWithADT.esercizioATM.exceptions.*;
 
 import java.util.*;
 
