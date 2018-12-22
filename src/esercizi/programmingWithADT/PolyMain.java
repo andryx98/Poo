@@ -3,7 +3,7 @@ package esercizi.programmingWithADT;
 public class PolyMain {
     public static void main(String arg[]) {
         try {
-            Poly p = new Poly(2, 1);
+            Poly p = new Poly(2, -1);
             Poly p1 = new Poly(3, 1);
             Poly p2 = new Poly(4, 2);
             Poly p3 = new Poly(3, 5);

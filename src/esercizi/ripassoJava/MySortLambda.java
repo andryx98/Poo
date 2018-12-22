@@ -30,7 +30,10 @@ public class MySortLambda {
     }
 
     /**
-     * sort the array a * MODIFY the array a so that values are ordered * @param a: an array of integers to be sorted * @param dir: the direction of the sort: INCREASING/DECREASING
+     * sort the array a
+     * MODIFY the array a so that values are ordered
+     * @param a: an array of integers to be sorted
+     * @param dir: the direction of the sort: INCREASING/DECREASING
      */
     private static void doParametricSort(int[] a, SortDirection dir) {
         BiPredicate<Integer, Integer> ic = null; // we need to use Integer

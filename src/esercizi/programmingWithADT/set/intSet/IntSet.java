@@ -1,4 +1,4 @@
-package esercizi.programmingWithADT;
+package esercizi.programmingWithADT.set.intSet;
 
 import java.util.*;
 
@@ -127,6 +127,16 @@ public class IntSet {
     }
 
     /**
+     * @return an iterator over this set. The iterator
+     * is not sensible to mutations of this set.
+     * This is one version of the iterator.
+     */
+    public ResettableIntSetIterator resettableIntSetIterator(){
+        assert (this.elements!=null);
+        return (new ResettableIntSetIterator(this.elements));
+    }
+
+    /**
      * @return a standard iterator over the Integers of this set. The iterator
      * is not sensible to mutations of this set.
      */
@@ -183,7 +193,6 @@ public class IntSet {
                 throw new NoSuchElementException("Went beyond the available values");
             }
         }
-
 
         @Override
         public void remove() {

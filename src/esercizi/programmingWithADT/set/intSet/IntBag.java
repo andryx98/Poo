@@ -1,4 +1,4 @@
-package esercizi.programmingWithADT;
+package esercizi.programmingWithADT.set.intSet;
 
 import java.util.Collections;
 import java.util.Objects;

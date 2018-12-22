@@ -1,4 +1,4 @@
-package esercizi.programmingWithADT;
+package esercizi.programmingWithADT.set.intSet;
 
 public class MainIntBag {
     public static void main(String[] args) {
