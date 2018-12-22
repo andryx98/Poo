@@ -1,4 +1,4 @@
-import esercizi.programmingWithADT.NegativeExponentException;
+package esercizi.programmingWithADT.polynomial;
 
 public class PolynomialMain {
     public static void main(String[] args) {

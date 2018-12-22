@@ -1,4 +1,4 @@
-package esercizi.ripassoJava;
+package esercizi.ripassoJava.overloading;
 
 public class B extends C {
     void m(Object o, long x, long y) {

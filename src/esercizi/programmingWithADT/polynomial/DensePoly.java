@@ -1,4 +1,4 @@
-package esercizi.programmingWithADT;
+package esercizi.programmingWithADT.polynomial;
 
 import java.util.TreeSet;
 import java.util.Objects;
@@ -56,7 +56,7 @@ public class DensePoly {
     /**
      * @param c: the coefficient
      * @param n: the exponent
-     * @return: a new Polynomial c*x^n if c!=0; otherwise the zero Polynomial
+     * @return: a new esercizi.programmingWithADT.polynomial.Polynomial c*x^n if c!=0; otherwise the zero esercizi.programmingWithADT.polynomial.Polynomial
      * @Throws NegativeExponentException when n<0.
      */
     public DensePoly(int c, int n) throws NegativeExponentException {

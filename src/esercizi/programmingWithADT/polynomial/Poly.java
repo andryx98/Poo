@@ -1,11 +1,11 @@
-package esercizi.programmingWithADT;
+package esercizi.programmingWithADT.polynomial;
 
 import java.util.*;
 
 /**
  * This class provides an ADT for polynomials with integer
  * not null coefficients and with non negative exponents: c_0+c_1*x+c_2*x^2+... .
- * Polynomial is immutable, unbounded.
+ * esercizi.programmingWithADT.polynomial.Polynomial is immutable, unbounded.
  * The empty poly is 0=0*x^0.
  */
 public class Poly {
@@ -52,7 +52,7 @@ public class Poly {
     /**
      * @param c: the coefficient
      * @param n: the exponent
-     * @return: a new Polynomial c*x^n if c!=0; otherwise the zero Polynomial
+     * @return: a new esercizi.programmingWithADT.polynomial.Polynomial c*x^n if c!=0; otherwise the zero esercizi.programmingWithADT.polynomial.Polynomial
      * @Throws NegativeExponentException when n<0.
      */
     public Poly(int c, int n) throws NegativeExponentException {

@@ -57,7 +57,7 @@ public class MainIntSet {
         }
         boolean same = s1.equals(s2);
         System.out.format("\nEquals = %s", same);
-// NB for mutable objects, equals returns false even if they have same state
+        // NB for mutable objects, equals returns false even if they have same state
         same = s1.sameValues(s2);
         System.out.format("\nSameValues = %s", same);
         System.out.format("\ns1 hascode=%s", s1.hashCode());

@@ -1,4 +1,4 @@
-package esercizi.programmingWithADT;
+package esercizi.programmingWithADT.polynomial;
 
 public class PolyMain {
     public static void main(String arg[]) {

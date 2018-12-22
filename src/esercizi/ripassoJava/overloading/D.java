@@ -1,4 +1,4 @@
-package esercizi.ripassoJava;
+package esercizi.ripassoJava.overloading;
 
 public class D {
     public void main(String[] args) {

@@ -1,4 +1,4 @@
-package esercizi.ripassoJava;
+package esercizi.ripassoJava.sort;
 
 import java.util.function.BiPredicate;
 

@@ -1,4 +1,4 @@
-package esercizi.ripassoJava;
+package esercizi.ripassoJava.sort;
 
 public class MyBetterSort {
     public enum ModoDiOrdinare {

@@ -1,5 +1,4 @@
-import esercizi.programmingWithADT.NegativeExponentException;
-import esercizi.programmingWithADT.Poly;
+package esercizi.programmingWithADT.polynomial;
 
 import java.util.Iterator;
 import java.util.Vector;
@@ -21,7 +20,7 @@ public class Polynomial extends Exception {
      *
      * @param c: the coefficient
      * @param n: the exponent
-     * @return: a new Polynomial c*x^n. 
+     * @return: a new esercizi.programmingWithADT.polynomial.Polynomial c*x^n. 
      * @Throw NegativeExponentException when n<0. 
      */
     public Polynomial(int c, int n) throws NegativeExponentException {

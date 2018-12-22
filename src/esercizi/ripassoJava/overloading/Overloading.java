@@ -1,4 +1,4 @@
-package esercizi.ripassoJava;
+package esercizi.ripassoJava.overloading;
 
 public class Overloading {
     static int i = 0;
